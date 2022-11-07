@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthChecker, CookieChecker } from "@utils";
-import { Account, Posts, Profile, Search, Main } from "@pages";
+import { Account, Posts, Profile, Search, Main, ErrorPage } from "@pages";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route path="main/*" element={<Main />} />
         </Route>
       </Route>
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 }
