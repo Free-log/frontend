@@ -5,7 +5,7 @@ import { Account, Posts, Profile, Search, Main, ErrorPage } from "@pages";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<CookieChecker />}>
+      <Route element={<CookieChecker />}>
         <Route path="account/*" element={<Account />} />
         <Route element={<AuthChecker />}>
           <Route path="post/*" element={<Posts />} />
@@ -13,8 +13,8 @@ function App() {
           <Route path="search/*" element={<Search />} />
           <Route path="main/*" element={<Main />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Route>
-      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 }
