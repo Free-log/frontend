@@ -143,7 +143,7 @@ const FileContainer = styled.div`
   flex-direction: row;
   position: absolute;
   transition: 1s;
-  opacity: 0;
+  opacity: ${(props) => (props.fadeIn ? 0 : 1)};
 
   ${(props) => {
     if (props.fadeIn) {
@@ -171,8 +171,8 @@ const FileContainer = styled.div`
         }
         & ${Paper}:last-child {
           transform: perspective(1000px) rotateY(-180deg);
-          transition: 2s;
-          transition-delay: 1s;
+          transition: 0.9s;
+          transition-delay: 0.1s;
           transform-origin: 0;
         }
         & {
