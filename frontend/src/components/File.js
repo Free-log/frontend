@@ -62,7 +62,7 @@ const Paper = styled.div`
   &:last-of-type {
     left: -22vw;
     width: 44vw;
-    z-index: ${(props) => (props.open ? 0 : -1)};
+    z-index: ${(props) => (props.open && !props.type ? 0 : -1)};
   }
 
   &:nth-of-type(3) {
@@ -241,7 +241,7 @@ function File(props) {
       <Paper type={type} />
       <Paper />
       <FileBodyUpper type={type} />
-      <Paper open={open} />
+      <Paper open={open} type={type} />
     </FileContainer>
   );
 }
