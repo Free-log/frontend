@@ -1,9 +1,8 @@
 import styled, { css } from "styled-components";
-import file from "@assets/images/file.png";
 import page from "@assets/images/page.png";
 
 const FileBodyUnder = styled.div`
-  background-image: url(${file});
+  background-color: #eed86c;
   position: absolute;
   top: 10vh;
   width: 44vw;
@@ -16,14 +15,14 @@ const FileBodyUnder = styled.div`
       `;
     } else if (props.type === "2") {
       return css`
-        filter: brightness(2.5);
+        filter: brightness(1.5);
       `;
     }
   }}
 `;
 
 const FileBookMark = styled.div`
-  background-image: url(${file});
+  background-color: #eed86c;
   border-radius: 0 15px 15px 0;
   position: absolute;
   top: 20vh;
@@ -39,7 +38,7 @@ const FileBookMark = styled.div`
       `;
     } else if (props.type === "2") {
       return css`
-        filter: brightness(2.5);
+        filter: brightness(1.5);
       `;
     }
   }}
@@ -103,7 +102,7 @@ const Paper = styled.div`
 `;
 
 const FileBodyUpper = styled.div`
-  background-image: url(${file});
+  background-color: #eed86c;
   position: absolute;
   top: 10vh;
   width: 44vw;
@@ -116,7 +115,7 @@ const FileBodyUpper = styled.div`
       `;
     } else if (props.type === "2") {
       return css`
-        filter: brightness(2.5);
+        filter: brightness(1.5);
       `;
     }
   }}
