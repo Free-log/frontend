@@ -9,18 +9,10 @@ const TestDIV = styled.div`
   overflow: hidden;
 `;
 
-function Login() {
+function SignIn() {
   const [open, setOpen] = useState(false);
   return (
     <TestDIV>
-      <button
-        onClick={() => {
-          console.log(open);
-          setOpen(!open);
-        }}
-      >
-        open
-      </button>
       <File type="1" fadeIn="1s" open={open} />
       <File type="2" fadeIn="1s" delay="0.5s" open={open} />
       <File fadeIn="1s" delay="1s" open={open} />
@@ -28,4 +20,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;

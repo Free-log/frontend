@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import FindId from "./FindId";
 import FindPassword from "./FindPassword";
-import Login from "./Login";
+import SignIn from "./SignIn";
 import SignUp from "./Signup";
 import { ErrorPage } from "@pages";
 
 function Account() {
   return (
     <Routes>
-      <Route path="signin" element={<Login />} />
+      <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
       <Route path="find">
         <Route path="id" element={<FindId />} />

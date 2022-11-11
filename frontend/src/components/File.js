@@ -6,7 +6,7 @@ const FileBodyUnder = styled.div`
   position: absolute;
   top: 10vh;
   width: 44vw;
-  height: 90vh;
+  height: 98vh;
 
   ${(props) => {
     if (props.type === "1") {
@@ -53,7 +53,7 @@ const Paper = styled.div`
   position: absolute;
   top: 10vh;
   width: 40vw;
-  height: 90vh;
+  height: 98vh;
 
   &:nth-of-type(5) {
     width: 44vw;
@@ -119,7 +119,7 @@ const FileBodyUpper = styled.div`
   position: absolute;
   top: 10vh;
   width: 44vw;
-  height: 90vh;
+  height: 98vh;
   transition: 1s;
   transform-origin: 0;
 
@@ -176,7 +176,7 @@ const FileContainer = styled.div`
           transform-origin: 0;
         }
         & {
-          transform: translate(22vw);
+          transform: translate(22vw, -8vh);
         }
       `;
   }}
