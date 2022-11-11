@@ -5,7 +5,7 @@ const Background = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: -1;
+  z-index: -10;
   opacity: 0.7;
   background-image: url(${background});
 `;
