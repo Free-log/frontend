@@ -3,8 +3,8 @@ import { TextField, Typography, Box, CustomForm, Button, StyledLink } from "@com
 function Find(props) {
   const counter = props.counter;
   console.log(counter);
-  const fadeIn = counter.current == 1 ? "1s" : "";
-  const delay = counter.current == 1 ? "1.5s" : "";
+  const fadeIn = counter.current === 1 ? "1s" : "";
+  const delay = counter.current === 1 ? "1.5s" : "";
   counter.current++;
 
   return (
@@ -15,7 +15,9 @@ function Find(props) {
           <TextField />
           <Button margin="30px auto">FIND ID</Button>
         </CustomForm>
-
+        <Typography color="#DF5659" margin={true ? "" : "18px"}>
+          {true}
+        </Typography>
         <CustomForm margin="30px auto">
           <Typography>ID</Typography>
           <TextField />
@@ -23,6 +25,9 @@ function Find(props) {
           <TextField />
           <Button margin="30px auto">FIND PASSWORD</Button>
         </CustomForm>
+        <Typography color="#DF5659" margin={true ? "" : "18px"}>
+          {true}
+        </Typography>
       </Box>
       <Box position direction="row">
         <Button margin="10px">
