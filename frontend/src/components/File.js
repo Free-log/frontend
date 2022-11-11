@@ -46,11 +46,24 @@ const FileBookMark = styled.div`
 
 const Paper = styled.div`
   background-image: url(${page});
-  filter: brightness(1.3) blur(0.3px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   position: absolute;
   top: 10vh;
   width: 40vw;
-  height: 80vh;
+  height: 90vh;
+
+  &:nth-of-type(5) {
+    width: 44vw;
+    left: -22vw;
+  }
+  &:last-of-type {
+    left: -22vw;
+    width: 44vw;
+    z-index: ${(props) => (props.open ? 0 : -1)};
+  }
 
   &:nth-of-type(3) {
     ${(props) => {
@@ -107,6 +120,8 @@ const FileBodyUpper = styled.div`
   top: 10vh;
   width: 44vw;
   height: 90vh;
+  transition: 1s;
+  transform-origin: 0;
 
   ${(props) => {
     if (props.type === "1") {
@@ -127,6 +142,65 @@ const FileContainer = styled.div`
   justify-content: center;
   flex-direction: row;
   position: absolute;
+  transition: 1s;
+  opacity: 0;
+
+  ${(props) => {
+    if (props.fadeIn) {
+      if (props.open === true && props.type) {
+        return css`
+          animation-name: fadeout;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+        `;
+      }
+      return css`
+        animation-name: fadein;
+        animation-duration: ${(props) => props.fadeIn};
+        animation-delay: ${(props) => props.delay};
+        animation-fill-mode: forwards;
+      `;
+    }
+  }}
+
+  ${(props) => {
+    if (props.open && !props.type)
+      return css`
+        & ${FileBodyUpper} {
+          transform: perspective(1000px) rotateY(-180deg);
+        }
+        & ${Paper}:last-child {
+          transform: perspective(1000px) rotateY(-180deg);
+          transition: 2s;
+          transition-delay: 1s;
+          transform-origin: 0;
+        }
+        & {
+          transform: translate(22vw);
+        }
+      `;
+  }}
+
+  @keyframes fadein {
+    from {
+      margin-top: 100px;
+    }
+    to {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+      margin-top: 0;
+    }
+    to {
+      opacity: 0;
+      margin-top: 100px;
+    }
+  }
 
   ${(props) => {
     if (props.type === "1") {
@@ -149,23 +223,25 @@ const FileContainer = styled.div`
   }}
 
   & div {
-    box-shadow: 10px 10px 2px 0px rgb(0 0 0 / 0.5);
+    box-shadow: unset 10px 4px 2px 4px rgb(0 0 0 / 0.5);
   }
 `;
 
 function File(props) {
+  const open = props.open;
   const type = props.type;
+  const fadeIn = props.fadeIn;
+  const delay = props.delay;
 
   return (
-    <FileContainer type={type}>
+    <FileContainer type={type} fadeIn={fadeIn} delay={delay} open={open}>
       <FileBodyUnder />
       <FileBookMark type={type} />
       <Paper type={type} />
       <Paper type={type} />
-
-      <Paper type={type} />
-      <Paper type={type} />
+      <Paper />
       <FileBodyUpper type={type} />
+      <Paper open={open} />
     </FileContainer>
   );
 }
