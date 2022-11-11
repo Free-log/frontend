@@ -1,6 +1,6 @@
 import { TextField, Typography, Box, CustomForm, Button, StyledLink } from "@components";
 
-function SignIn(props) {
+function Find(props) {
   const counter = props.counter;
   console.log(counter);
   const fadeIn = counter.current == 1 ? "1s" : "";
@@ -10,24 +10,30 @@ function SignIn(props) {
   return (
     <Box fadeIn={fadeIn} delay={delay}>
       <Box position>
-        <CustomForm>
+        <CustomForm margin="30px auto">
           <Typography>ID</Typography>
           <TextField />
-          <Typography>PASSWORD</Typography>
+          <Button margin="30px auto">FIND ID</Button>
+        </CustomForm>
+
+        <CustomForm margin="30px auto">
+          <Typography>ID</Typography>
           <TextField />
-          <Button margin="30px auto">SIGN IN</Button>
+          <Typography>EMAIL</Typography>
+          <TextField />
+          <Button margin="30px auto">FIND PASSWORD</Button>
         </CustomForm>
       </Box>
       <Box position direction="row">
         <Button margin="10px">
-          <StyledLink to="../signup">SIGN UP</StyledLink>
+          <StyledLink to="../signin">SIGN IN</StyledLink>
         </Button>
         <Button margin="10px">
-          <StyledLink to="../find">FIND</StyledLink>
+          <StyledLink to="../signup">SIGN UP</StyledLink>
         </Button>
       </Box>
     </Box>
   );
 }
 
-export default SignIn;
+export default Find;

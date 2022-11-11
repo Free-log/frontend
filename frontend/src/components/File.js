@@ -62,7 +62,7 @@ const Paper = styled.div`
   &:last-of-type {
     left: -22vw;
     width: 44vw;
-    z-index: ${(props) => (props.open && !props.type ? 0 : -1)};
+    z-index: ${(props) => (props.open && !props.type ? -8 : -9)};
   }
 
   &:nth-of-type(3) {
@@ -144,6 +144,7 @@ const FileContainer = styled.div`
   position: absolute;
   transition: 1s;
   opacity: ${(props) => (props.fadeIn ? 0 : 1)};
+  z-index: -8;
 
   ${(props) => {
     if (props.fadeIn) {
@@ -205,18 +206,19 @@ const FileContainer = styled.div`
   ${(props) => {
     if (props.type === "1") {
       return css`
-        top: 30vh;
+        top: 20vh;
         left: 34vw;
         transform: rotate(-0.00875turn);
       `;
     } else if (props.type === "2") {
       return css`
-        top: 14vh;
+        top: 10vh;
         left: 64vw;
         transform: rotate(0.00243turn);
       `;
     } else {
       return css`
+        top: 0;
         left: 50vw;
       `;
     }
@@ -224,6 +226,7 @@ const FileContainer = styled.div`
 
   & div {
     box-shadow: unset 10px 4px 2px 4px rgb(0 0 0 / 0.5);
+    z-index: -8;
   }
 `;
 

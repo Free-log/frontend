@@ -1,4 +1,5 @@
 import AuthChecker from "./AuthChecker";
-import CookieChecker from "./CookieChecker";
+import Redirector from "./Redirector";
+import { setCookie, getCookie } from "./cookieSetter";
 
-export { AuthChecker, CookieChecker };
+export { AuthChecker, setCookie, getCookie, Redirector };
