@@ -7,8 +7,12 @@ const Button = styled.button.attrs((props) => ({ id: props.id }))`
 
   width: ${(props) => props.width || "160px"};
   height: ${(props) => props.height || "30px"};
-  margin: ${(props) => props.margin || "0 auto"};
   border: ${(props) => props.border || "0px solid white"};
+  margin: ${(props) => props.margin || "0 auto"};
+  margin-top: ${(props) => props.marginTop};
+  margin-left: ${(props) => props.marginLeft};
+  margin-right: ${(props) => props.marginRight};
+  margin-bottom: ${(props) => props.marginBottom};
 
   border-radius: 30px;
   font-family: Itim;

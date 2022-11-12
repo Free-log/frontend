@@ -9,6 +9,11 @@ const TextField = styled.input.attrs((props) => ({
   border-radius: 30px;
 
   margin: ${(props) => props.margin || "0px auto 6px auto"};
+  margin-top: ${(props) => props.marginTop};
+  margin-left: ${(props) => props.marginLeft};
+  margin-right: ${(props) => props.marginRight};
+  margin-bottom: ${(props) => props.marginBottom};
+
   width: ${(props) => props.width || "248px"};
   height: ${(props) => props.height || "18px"};
 

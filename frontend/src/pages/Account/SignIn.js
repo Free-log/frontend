@@ -23,15 +23,15 @@ function SignInBox() {
   return (
     <Box position>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
-        <Typography>ID</Typography>
-        <TextField onChange={spaceRemover} {...register("id")} />
-        <Typography>PASSWORD</Typography>
-        <TextField type="password" onChange={spaceRemover} {...register("password")} />
-        <Button margin="30px auto" disabled={inputChecker}>
+        <Typography marginBottom="4px">ID</Typography>
+        <TextField marginBottom="20px" onChange={spaceRemover} {...register("id")} />
+        <Typography marginBottom="4px">PASSWORD</Typography>
+        <TextField marginBottom="20px" type="password" onChange={spaceRemover} {...register("password")} />
+        <Button marginTop="20px" disabled={inputChecker}>
           SIGN IN
         </Button>
       </CustomForm>
-      <Typography color="#DF5659" margin={errorMessage ? "" : "18px"}>
+      <Typography color="#DF5659" margin={errorMessage ? "12px auto" : "20px"}>
         {errorMessage}
       </Typography>
     </Box>
