@@ -6,14 +6,12 @@ import signUpValidator from "./signUpValidator";
 import findValidator from "./signUpValidator";
 import { findIdValidator, findPasswordValidator } from "./findValidator";
 
-import AuthChecker from "./AuthChecker";
 import Redirector from "./Redirector";
 import spaceRemover from "./spaceRemover";
 import api from "./api";
 
 export {
   findValidator,
-  AuthChecker,
   setCookie,
   getCookie,
   Redirector,
