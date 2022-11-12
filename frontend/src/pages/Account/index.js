@@ -1,14 +1,21 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 import { File, Container } from "@components";
+import { Redirector } from "@utils";
 import Find from "./Find";
 import SignIn from "./SignIn";
 import SignUp from "./Signup";
-import { Redirector } from "@utils";
-import { useRef, useState } from "react";
 
 function Account() {
-  const [open, setOpen] = useState(false);
+  const token = useSelector((state) => state.token.accessToken);
+  const open = useSelector((state) => state.fileEffect.open);
   const counter = useRef(1);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (token) navigate("../../main/trend");
+  }, [navigate, token]);
 
   return (
     <Container>

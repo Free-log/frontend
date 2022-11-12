@@ -82,8 +82,8 @@ function FindPasswordBox() {
 
 function Find(props) {
   const counter = props.counter;
-  const fadeIn = counter.current === 1 ? "1s" : "";
-  const delay = counter.current === 1 ? "1.5s" : "";
+  const fadeIn = counter.current < 2 ? "1s" : "";
+  const delay = counter.current < 2 ? "1.5s" : "";
   counter.current++;
 
   return (
