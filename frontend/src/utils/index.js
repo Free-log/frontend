@@ -1,14 +1,18 @@
 import { setCookie, getCookie } from "./cookieSetter";
 import { passwordRegular, idRegular, nickNameRegular } from "./regexs";
 
-import AuthChecker from "./AuthChecker";
-import Redirector from "./Redirector";
 import signInValidator from "./signInValidator";
 import signUpValidator from "./signUpValidator";
+import findValidator from "./signUpValidator";
+import { findIdValidator, findPasswordValidator } from "./findValidator";
+
+import AuthChecker from "./AuthChecker";
+import Redirector from "./Redirector";
 import spaceRemover from "./spaceRemover";
 import api from "./api";
 
 export {
+  findValidator,
   AuthChecker,
   setCookie,
   getCookie,
@@ -20,4 +24,6 @@ export {
   spaceRemover,
   api,
   signUpValidator,
+  findIdValidator,
+  findPasswordValidator,
 };
