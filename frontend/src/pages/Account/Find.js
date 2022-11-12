@@ -16,7 +16,6 @@ function FindIdBox() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    // 여기다가 이제 백에 데이터 보내는거
   };
 
   return (

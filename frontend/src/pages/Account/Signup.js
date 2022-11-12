@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signUpValidator, spaceRemover } from "@utils";
 import { TextField, Typography, Box, CustomForm, Button, StyledLink } from "@components";
 
 function SignUp(props) {
   const onSubmit = async (data) => {
-    console.log(data);
-    // 여기다가 이제 백에 데이터 보내는거
+    alert("회원가입 성공", navigate("../signin"));
   };
 
   const {
@@ -15,6 +15,7 @@ function SignUp(props) {
     watch,
     formState: { errors },
   } = useForm({ mode: "onBlur", resolver: yupResolver(signUpValidator) });
+  const navigate = useNavigate();
   const watcher = watch(["id", "email", "password", "passwordConfirm"]);
   const inputChecker = watcher.includes("") || watcher.includes(undefined) || Object.values(errors)[0];
   const counter = props.counter;
