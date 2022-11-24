@@ -15,7 +15,7 @@ function MainPage() {
   return (
     <TestDIV>
       {tempName}
-      <File open={true} />
+      <File coordinate={{ X: "50vw", Y: "0" }} open={{ duration: 0.1, delay: 0.1 }} />
     </TestDIV>
   );
 }

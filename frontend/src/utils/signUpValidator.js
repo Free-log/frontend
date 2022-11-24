@@ -8,7 +8,7 @@ const signUpValidator = object().shape({
     .matches(passwordRegular, "password should contain at least one digit one character and one punctuation")
     .required(),
   passwordConfirm: string()
-    .oneOf([ref("password"), null])
+    .oneOf([ref("password"), null], "Passwords must match")
     .required(),
 });
 

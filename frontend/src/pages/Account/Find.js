@@ -1,9 +1,9 @@
-import { TextField, Typography, Box, CustomForm, Button, StyledLink } from "@components";
+import { TextField, Typography, Container, CustomForm, Button, StyledLink } from "@components";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { findIdValidator, findPasswordValidator, spaceRemover } from "@utils";
 
-function FindIdBox() {
+function FindIdContainer() {
   const {
     register,
     handleSubmit,
@@ -19,7 +19,7 @@ function FindIdBox() {
   };
 
   return (
-    <Box position>
+    <Container position>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
         <Typography marginBottom="4px">EMAIL</Typography>
         <TextField
@@ -34,11 +34,11 @@ function FindIdBox() {
           FIND ID
         </Button>
       </CustomForm>
-    </Box>
+    </Container>
   );
 }
 
-function FindPasswordBox() {
+function FindPasswordContainer() {
   const {
     register,
     handleSubmit,
@@ -55,7 +55,7 @@ function FindPasswordBox() {
   };
 
   return (
-    <Box position>
+    <Container position>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
         <Typography marginBottom="4px">ID</Typography>
         <TextField marginBottom={errors.id?.message ? "6px" : "20px"} onChange={spaceRemover} {...register("id")} />
@@ -75,7 +75,7 @@ function FindPasswordBox() {
           FIND ID
         </Button>
       </CustomForm>
-    </Box>
+    </Container>
   );
 }
 
@@ -86,18 +86,18 @@ function Find(props) {
   counter.current++;
 
   return (
-    <Box fadeIn={fadeIn} delay={delay}>
-      <FindIdBox />
-      <FindPasswordBox />
-      <Box position direction="row">
+    <Container fadeIn={fadeIn} delay={delay}>
+      <FindIdContainer />
+      <FindPasswordContainer />
+      <Container position direction="row">
         <Button margin="10px">
           <StyledLink to="../signin">SIGN IN</StyledLink>
         </Button>
         <Button margin="10px">
           <StyledLink to="../signup">SIGN UP</StyledLink>
         </Button>
-      </Box>
-    </Box>
+      </Container>
+    </Container>
   );
 }
 
