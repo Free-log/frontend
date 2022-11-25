@@ -81,12 +81,11 @@ function FindPasswordContainer() {
 
 function Find(props) {
   const counter = props.counter;
-  const fadeIn = counter.current < 2 ? "1s" : "";
-  const delay = counter.current < 2 ? "1.5s" : "";
+  const animation = counter.current === 1 ? { fadeIn: { duration: 1, delay: 1.5 } } : "";
   counter.current++;
 
   return (
-    <Container fadeIn={fadeIn} delay={delay}>
+    <Container animation={animation}>
       <FindIdContainer />
       <FindPasswordContainer />
       <Container position direction="row">
